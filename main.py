@@ -1,7 +1,6 @@
 import os
 from dotenv import load_dotenv
 from agents import Agent, Runner, OpenAIChatCompletionsModel, AsyncOpenAI
-# from openai import AsyncOpenAI
 
 load_dotenv()
 gemini_api_key = os.getenv("GEMINI_API_KEY")
@@ -21,5 +20,5 @@ agent = Agent(
     model=model
 )
 
-result = Runner.run_sync(agent,"hello who are you")
+result = Runner.run_sync(agent,"hello who are you and what is my name (my name is ammar)")
 print(result.final_output)
